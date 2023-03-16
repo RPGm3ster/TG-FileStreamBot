@@ -16,5 +16,5 @@ async def start(_, m: Message):
             disable_web_page_preview=True, quote=True
         )
     await m.reply(
-        f'Hi {m.from_user.mention(style="md")}, Send me a file to get an instant stream link.'
+        f'مرحبا {m.from_user.mention(style="md")}, ارسل الي ملف لاقوم بتوليد رابط تشغيل مباشر , تابع طريقة المشاهدة هنا https://t.me/l_l_U/24 , BOT - @KYYBOT 🍂 𝙲𝚑 - @kekkkkk .'
     )
