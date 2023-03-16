@@ -16,5 +16,5 @@ async def start(_, m: Message):
             disable_web_page_preview=True, quote=True
         )
     await m.reply(
-        f'مرحبا {m.from_user.mention(style="md")}, @l_l_U :ارسل الي ملف لاقوم بتوليد رابط تشغيل مباشر  , تابع طريقة المشاهدة هنا.'
+        f'مرحبا {m.from_user.mention(style="md")},ارسل الي ملف لاقوم بتوليد رابط تشغيل مباشر  , تابع طريقة المشاهدة هنا  @l_l_U .'
     )
