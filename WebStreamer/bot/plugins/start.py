@@ -15,7 +15,7 @@ db = Database(Var.DATABASE_URL, Var.name)
 
 
 @StreamBot.on_message(filters.command(["start", "help"]) & filters.private)
-async def start(b, m):
+async def start(_, m: Message):
     if not await db.is_user_exist(m.from_user.id):
         await db.add_user(m.from_user.id)
         await b.send_message(
@@ -46,14 +46,7 @@ async def start(b, m):
                 ),
                 
             )
-@StreamBot.on_message(filters.command(["start", "help"]) & filters.private)
-async def start(_, m: Message):
-    if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
-        return await m.reply(
-            "You are not in the allowed list of users who can use me. \
-            Check <a href='https://github.com/EverythingSuckz/TG-FileStreamBot#optional-vars'>this link</a> for more info.",
-            disable_web_page_preview=True, quote=True
-        )      await m.reply(
+   await m.reply(
         f'مرحبا {m.from_user.mention(style="md")},ارسل الي ملف لاقوم بتوليد رابط تشغيل مباشر  , تابع طريقة المشاهدة هنا  @l_l_U .')
     
     )
