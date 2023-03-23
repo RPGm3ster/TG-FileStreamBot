@@ -3,7 +3,8 @@
 
 import sys
 from os import environ
-from dotenv import load_dotenv
+from dotenv import load_dotenv import getenv, environ
+import load_dotenv
 
 load_dotenv()
 
@@ -35,6 +36,6 @@ class Var(object):
     USE_SESSION_FILE = str(environ.get("USE_SESSION_FILE", "0").lower()) in ("1", "true", "t", "yes", "y")
     ALLOWED_USERS = [x.strip("@ ") for x in str(environ.get("ALLOWED_USERS", "") or "").split(",") if x.strip("@ ")]
     UPDATES_CHANNEL = str(environ.get('UPDATES_CHANNEL', None))
-    DATABASE_URL = strenviron.get('DATABASE_URL'))
+    DATABASE_URL = str(environ.get('DATABASE_URL'))
     name = str(environ.get('name', 'TG-FileStreamBot'))
     OWNER_ID = str(environ.get("OWNER_ID"))
