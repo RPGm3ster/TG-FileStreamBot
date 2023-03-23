@@ -34,7 +34,7 @@ class Var(object):
     DEBUG = str(environ.get("DEBUG", "0").lower()) in ("1", "true", "t", "yes", "y")
     USE_SESSION_FILE = str(environ.get("USE_SESSION_FILE", "0").lower()) in ("1", "true", "t", "yes", "y")
     ALLOWED_USERS = [x.strip("@ ") for x in str(environ.get("ALLOWED_USERS", "") or "").split(",") if x.strip("@ ")]
-    UPDATES_CHANNEL = int(environ.get("UPDATES_CHANNEL"))
-    DATABASE_URL = int(environ.get("DATABASE_URL"))
+    UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', None))
+    DATABASE_URL = str(getenv('DATABASE_URL'))
     name = str(environ.get('name', 'TG-FileStreamBot'))
     OWNER_ID = int(environ.get("OWNER_ID"))
