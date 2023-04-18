@@ -36,6 +36,7 @@ async def initialize_clients():
                 api_id=Var.API_ID,
                 api_hash=Var.API_HASH,
                 bot_token=token,
+                updates_channel=Var.UPDATES_CHANNEL
                 sleep_threshold=Var.SLEEP_THRESHOLD,
                 workdir=sessions_dir if Var.USE_SESSION_FILE else Client.PARENT_DIR,
                 no_updates=True,
