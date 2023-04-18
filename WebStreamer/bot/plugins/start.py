@@ -12,7 +12,7 @@ async def start(_, m: Message):
             if chat.status == "kicked":
                 return await m.reply("عذراً، لا يمكنك استخدام هذا البوت. إذا كنت تريد الاستمرار في استخدامه، يرجى الاتصال بمشرف.")
         except UserNotParticipant:
-            return await m.reply(f"**يرجى الانضمام إلى قناة التحديثات الخاصة بنا أولاً:@**\n\n{Var.UPDATES_CHANNEL}\n\nبعد الانضمام إلى القناة، يمكنك استخدام هذا البوت.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("أضغط هنا للانضمام", url=f"t.me/{Var.UPDATES_CHANNEL}")]]))
+            return await m.reply(f"**يرجى الانضمام إلى قناة التحديثات الخاصة بنا أولاً:**\n\n@{Var.UPDATES_CHANNEL}\n\nبعد الانضمام إلى القناة، يمكنك استخدام هذا البوت.", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("أضغط هنا للانضمام", url=f"t.me/{Var.UPDATES_CHANNEL}")]]))
         except Exception:
             return await m.reply("عذرًا، حدث خطأ غير معروف. يرجى إعادة المحاولة في وقت لاحق.")
     if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
