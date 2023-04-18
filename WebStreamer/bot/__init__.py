@@ -24,7 +24,6 @@ StreamBot = Client(
     workdir=sessions_dir if Var.USE_SESSION_FILE else "WebStreamer",
     plugins={"root": "WebStreamer/bot/plugins"},
     bot_token=Var.BOT_TOKEN,
-    updates_channel=Var.UPDATES_CHANNEL,
     sleep_threshold=Var.SLEEP_THRESHOLD,
     workers=Var.WORKERS,
     in_memory=not Var.USE_SESSION_FILE,
