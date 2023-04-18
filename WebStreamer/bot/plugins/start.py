@@ -20,6 +20,6 @@ async def start(_, m: Message):
     )
 
 async def check_user_membership(user_id: int) -> bool:
-    chat = await StreamBot.get_chat(chat_id=Var.CHANNEL_NAME)
+    chat = await StreamBot.get_chat(chat_id=-1001420087793)
     member = await StreamBot.get_chat_member(chat_id=chat.id, user_id=user_id)
     return member.status in ("creator", "administrator", "member")
