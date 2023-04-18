@@ -1,5 +1,6 @@
 from pyrogram import filters
-from pyrogram.types import Message
+from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.errors import UserNotParticipant
 from WebStreamer.vars import Var 
 from WebStreamer.bot import StreamBot
 
