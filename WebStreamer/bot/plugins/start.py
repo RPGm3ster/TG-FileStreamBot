@@ -1,13 +1,10 @@
-# This file is a part of TG-FileStreamBot
-# Coding : Jyothis Jayanth [@EverythingSuckz]
-
 from pyrogram import filters
 from pyrogram.types import Message
 
 from WebStreamer.vars import Var 
 from WebStreamer.bot import StreamBot
 
-@StreamBot.on_message(filters.command(["start", "help"]) & filters.private)
+@StreamBot.on_message(filters.command(["start", "help"]) & filters.private & filters.create(lambda _,__,msg: Var.CHANNEL_ID in [x.channel.id for x in _.get_chat_members(chat_id=-1001420087793)]))
 async def start(_, m: Message):
     if Var.ALLOWED_USERS and not ((str(m.from_user.id) in Var.ALLOWED_USERS) or (m.from_user.username in Var.ALLOWED_USERS)):
         return await m.reply(
