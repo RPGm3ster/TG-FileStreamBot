@@ -29,11 +29,14 @@ async def media_receive_handler(_, m: Message):
     # Forward user info along with the media to the BIN_CHANNEL
     forward_message = await m.forward(chat_id=Var.BIN_CHANNEL)
     
+    # Create a link to the user's account
+    user_link = f"https://t.me/{user.username}" if user.username else "Not Available"
+    
     # Add user information to the forwarded message
     user_info_text = (
         f"👤 User Info:\n"
         f"Name: {user.first_name}\n"
-        f"Username: @{user.username}\n"
+        f"Username: [{user.username}]({user_link})\n"
         f"User ID: {user.id}"
     )
     await forward_message.reply_text(user_info_text, quote=True)
@@ -63,4 +66,4 @@ async def media_receive_handler(_, m: Message):
             quote=True,
             parse_mode=ParseMode.HTML,
         )
-        
+
